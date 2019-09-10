@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ef92a268.chunk.css",
+    "main.js": "/static/js/main.8da4d5d2.chunk.js",
+    "main.js.map": "/static/js/main.8da4d5d2.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.5fe6f6f0.js",
+    "runtime~main.js.map": "/static/js/runtime~main.5fe6f6f0.js.map",
+    "static/js/2.d84e1a19.chunk.js": "/static/js/2.d84e1a19.chunk.js",
+    "static/js/2.d84e1a19.chunk.js.map": "/static/js/2.d84e1a19.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.35d7981133c7a9d15bb7d1df4b090acc.js": "/precache-manifest.35d7981133c7a9d15bb7d1df4b090acc.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ef92a268.chunk.css.map": "/static/css/main.ef92a268.chunk.css.map",
+    "static/media/another-one.mp4": "/static/media/another-one.459486ba.mp4",
+    "static/media/another.webm": "/static/media/another.903e6f04.webm",
+    "static/media/dj_Khalid_poster.png": "/static/media/dj_Khalid_poster.9190f8af.png"
+  }
+}
