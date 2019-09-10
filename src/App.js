@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
+import AnotherOneVid from './AnotherOneVid';
+import Button from './Button';
+import Prophecy from './Prophecy';
+import Firebase from './Firebase';
 import './App.css';
 
-function App() {
+const App = () => {
+  console.log(Firebase.quotesCollection);
+  const [db, setDb] = React.useState([]);
+  const [index, setIndex] = React.useState();
+
+  const Seleckta = () => {
+    const prophecyDisplay = document.getElementById('prophecy');
+    const video = document.getElementById('anotherOneVid');
+    const btnText = document.getElementById('centerbtn');
+
+    if (video.muted !== false) { //if this is not muted
+      video.muted = false;
+    }
+    video.play();
+
+    prophecyDisplay.style.display = "flex";
+
+    if (btnText.textContent === "Bless Up") { //dynamism with button text
+      btnText.textContent = "Another One";
+    } else if (btnText.textContent === "Another One") {
+      btnText.textContent = "Bless Up";
+    }
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+      <div className = "App">
+        <Prophecy display = {"Hell Yeahhhhhh"} />
+        <AnotherOneVid />
+        <Button onClickFunction ={Seleckta} />
+      </div>
+
   );
 }
+
 
 export default App;

@@ -1,33 +1,97 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.prophecy {
+  display: none;
+  position: fixed;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  left: auto;
+  top: 5em;
+  background-color: #ffff;
+  opacity: .9;
+
+}
+
+
+/* .videoWrapper {
+  height: 99vh;
+  width: 99vw;
+  overflow: none;
+} */
+
+.anotherOneVid {
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+  postion: fixed;
+  /* min-width: 100%;
+  min-height: 100%;
+  object-position: 50% 50%; */
+}
+
+.btncontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 4em;
+  left: auto;
+  width: 100%;
+}
+
+.centerbtn {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  background-color: white;
+  transition-duration: 0.2s;
+  outline: none;
+}
+
+.centerbtn:hover {
   color: white;
+  background-color: black;
 }
 
-.App-link {
-  color: #61dafb;
+/* .blink{
+color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+
+span{
+		animation: blink 4s linear infinite;
+} */
+
+@media only screen and (min-width: 768px) {
+  .prophecy {
+
   }
-  to {
-    transform: rotate(360deg);
+  .anotherOneVid {
+
+  }
+  .btncontainer {
+
+  }
+  .centerbtn {
+
+  }
+  .centerbtn:hover {
+
   }
 }
