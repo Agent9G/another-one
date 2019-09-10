@@ -13,25 +13,11 @@ const firebaseConfig = {
 
 class Firebase {
   constructor() {
-      //initialize firebase
-      firebase.initializeApp(firebaseConfig);
-      //initialize db
-      this.db = firebase.firestore();
+    //initialize firebase
+    firebase.initializeApp(firebaseConfig);
+    //initialize db
+    this.db = firebase.firestore();
   }
-
-  quotesCollection = () => { this.db.collection("quotes").get()
-  .then((querySnapshot) => {
-    const dbDataArray = [];
-    querySnapshot.forEach((doc) => {
-      dbDataArray.push(doc.data());
-    });
-    return dbDataArray;
-  })
-  .catch ((e) => console.log("data not here", e));
-  };
 }
 
-
-
-
-export default Firebase;
+export default new Firebase();
