@@ -6,7 +6,10 @@ import Firebase from "./Firebase";
 import "./App.css";
 
 const App = () => {
-  Firebase.db
+
+  // const [db, setDb] = React.useState([]);
+
+  console.log(Firebase.db
     .collection("quotes")
     .get()
     .then(querySnapshot => {
@@ -14,16 +17,16 @@ const App = () => {
       querySnapshot.forEach(doc => {
         dbDataArray.push(doc.data());
       });
-      console.log(dbDataArray);
-      setDb(dbDataArray);
+      return dbDataArray;
     })
-    .catch(e => console.log("data not here", e));
+    .catch(e => console.log("data not here", e)));
 
-  const [db, setDb] = React.useState([]);
 
-  const randomIndex = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
+  // const [quote, setQuote] = React.useState('');
+
+  // const randomIndex = (min, max) => {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // };
 
   const Seleckta = () => {
     const prophecyDisplay = document.getElementById("prophecy");
@@ -45,12 +48,13 @@ const App = () => {
       btnText.textContent = "Bless Up";
     }
 
-    prophecyDisplay.textContent = db[randomIndex(0, db.length)];
+    // const newQuote = db[randomIndex(0, db.length)].quote;
+    // setQuote(newQuote);
   };
 
   return (
     <div className="App">
-      <Prophecy display={"Hell Yeahhhhhh"} />
+      <Prophecy display={"Helllloooooo"} />
       <AnotherOneVid />
       <Button onClickFunction={Seleckta} />
     </div>

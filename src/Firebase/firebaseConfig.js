@@ -2,13 +2,13 @@ import * as firebase from "firebase/app";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  databaseURL: process.env.REACT_APP_databaseURL,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
+  apiKey: "AIzaSyAkKGS1HEfboD0kC6v6YNy1eleY2BW1w9c",
+  authDomain: "another-one-98483.firebaseapp.com",
+  databaseURL: "https://another-one-98483.firebaseio.com",
+  projectId: "another-one-98483",
+  storageBucket: "",
+  messagingSenderId: "582734948815",
+  appId: "1:582734948815:web:5c66502206eb61c4",
 };
 
 class Firebase {
