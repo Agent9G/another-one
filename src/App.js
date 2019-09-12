@@ -1,15 +1,16 @@
 import React from "react";
+import Navbar from "./Navbar";
 import AnotherOneVid from "./AnotherOneVid";
 import Button from "./Button";
 import Prophecy from "./Prophecy";
+import Sharebtns from "./Share"
 import Firebase from "./Firebase";
 import "./App.css";
 
 const App = () => {
+  const [db, setDb] = React.useState(null);
 
-  // const [db, setDb] = React.useState([]);
-
-  console.log(Firebase.db
+  Firebase.db
     .collection("quotes")
     .get()
     .then(querySnapshot => {
@@ -17,21 +18,34 @@ const App = () => {
       querySnapshot.forEach(doc => {
         dbDataArray.push(doc.data());
       });
+      setDb(dbDataArray);
       return dbDataArray;
     })
-    .catch(e => console.log("data not here", e)));
+    .catch(error => {
+      console.log("data not here because", error);
+      setDb([]);
+    });
 
+  // console.log(db);
 
-  // const [quote, setQuote] = React.useState('');
+  const [quote, setQuote] = React.useState('');
 
-  // const randomIndex = (min, max) => {
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // };
+  const randomIndex = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
 
   const Seleckta = () => {
     const prophecyDisplay = document.getElementById("prophecy");
     const video = document.getElementById("anotherOneVid");
     const btnText = document.getElementById("centerbtn");
+
+    if (db.length === 0) {
+      const newQuote = "oops";
+      setQuote(newQuote);
+    } else {
+      const newQuote = db[randomIndex(0, db.length)].quote;
+      setQuote(newQuote);
+    }
 
     if (video.muted !== false) {
       //if this is not muted
@@ -47,16 +61,15 @@ const App = () => {
     } else if (btnText.textContent === "Another One") {
       btnText.textContent = "Bless Up";
     }
-
-    // const newQuote = db[randomIndex(0, db.length)].quote;
-    // setQuote(newQuote);
   };
 
   return (
     <div className="App">
-      <Prophecy display={"Helllloooooo"} />
+      <Navbar />
+      <Prophecy display={quote} />
       <AnotherOneVid />
       <Button onClickFunction={Seleckta} />
+      <Sharebtns />
     </div>
   );
 };

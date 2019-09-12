@@ -1,5 +1,6 @@
 import * as firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/performance";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAkKGS1HEfboD0kC6v6YNy1eleY2BW1w9c",
@@ -17,6 +18,7 @@ class Firebase {
     firebase.initializeApp(firebaseConfig);
     //initialize db
     this.db = firebase.firestore();
+    this.perf = firebase.performance();
   }
 }
 

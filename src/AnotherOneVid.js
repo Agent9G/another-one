@@ -9,7 +9,7 @@ function AnotherOneVid() {
 
   return (
     <div className="">
-      <video playsInline autoPlay muted={true} poster={poster} className="anotherOneVid" id="anotherOneVid" width="414" height="736">
+      <video playsInline autoPlay muted={true} poster={poster} className="video" id="anotherOneVid" width="414" height="736">
         <source src={mp4}  type='video/mp4' />
         <source src={webm}  type='video/webm' />
       </video>
