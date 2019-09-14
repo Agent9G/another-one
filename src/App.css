@@ -63,6 +63,17 @@
   width: 100%;
 }
 
+.btncontainer1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1.5em;
+  left: auto;
+  width: 100%;
+}
+
 .centerbtn {
   padding: 0.35em 1.2em;
   border: 0.1em solid black;
@@ -74,10 +85,27 @@
   outline: none;
 }
 
+.centerbtn1 {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  margin: 0.3em 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  color: white;
+  background-color: black;
+  transition-duration: 0.2s;
+  font-size: 16px;
+  outline: none;
+}
+
 .centerbtn:hover {
   color: white;
   background-color: black;
 }
+
+/* .centerbtn1:hover {
+  color: white;
+  background-color: black;
+} */
 
 .shareContainer {
   display: flex;
@@ -86,14 +114,32 @@
   z-index: 10;
   position: fixed;
   bottom: 30vh;
-  left: 1vw;
+  left: 2vw;
 }
 
 .SocialMediaShareCount {
   position: relative;
   left: 22px;
   top: -37px;
+  min-height: 10px;
 }
+
+.socialShareButtonsContainer {
+  visibility: collapse;
+
+}
+
+.AGENT9G_Logo_Cont {
+  display: flex;
+  width: 100%;
+}
+
+.Logo_Cont {
+  position: fixed;
+  bottom: 0.4em;
+  right: .5em;
+}
+
 
 /* .blink{
 color: black;
