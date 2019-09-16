@@ -7,7 +7,9 @@ import Prophecy from "./Prophecy";
 import Sharebtns from "./Share"
 import Agent9G from "./Agent9G"
 import Firebase from "./Firebase";
+import TagManager from "react-gtm-module";
 import "./App.css";
+
 
 const App = () => {
 
@@ -15,15 +17,20 @@ const App = () => {
   const [quote, setQuote] = React.useState('');
   const [mute, setMute] = React.useState("Mute");
 
+
   React.useEffect(() => {
     Firebase.db
       .collection("quotes")
       .limit(50)
-      .onSnapshot(querySnapshot => {
+      .onSnapshot({ includeMetadataChanges: true }, querySnapshot => {
         let dbDataArray = [];
         querySnapshot.forEach(doc => {
           dbDataArray.push(doc.data());
         });
+
+        var source = querySnapshot.metadata.fromCache ? "local cache" : "server";
+        console.log("Data came from " + source);
+
         setDb(dbDataArray);
         return dbDataArray;
       }, error => {
@@ -31,6 +38,13 @@ const App = () => {
         setDb([]);
       });
   },[db]);
+
+  React.useEffect(() => {
+    const tagManagerArgs = {
+      id: 'GTM-WF2VSW8'
+    }
+    TagManager.initialize(tagManagerArgs);
+  }, [])
 
   const randomIndex = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;

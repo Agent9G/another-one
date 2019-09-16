@@ -1,9 +1,9 @@
 {
   "name": "another-one",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "dependencies": {
-    "firebase": "^6.6.0",
+    "firebase": "^6.6.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-gtm-module": "^2.0.8",
