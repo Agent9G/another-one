@@ -1,11 +1,11 @@
 import React from "react";
-import Agen9G from "./assets/Agent9G_Logo.png";
+import Agent9G from "./assets/Agent9G_Logo.png";
 import "./App.css";
 
 
 const Logo = () => {
 
-  const src = Agen9G;
+  const src = Agent9G;
 
   return (
     <div className="AGENT9G_Logo_Cont">

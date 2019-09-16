@@ -22,14 +22,11 @@ const App = () => {
     Firebase.db
       .collection("quotes")
       .limit(50)
-      .onSnapshot({ includeMetadataChanges: true }, querySnapshot => {
+      .onSnapshot(querySnapshot => {
         let dbDataArray = [];
         querySnapshot.forEach(doc => {
           dbDataArray.push(doc.data());
         });
-
-        var source = querySnapshot.metadata.fromCache ? "local cache" : "server";
-        console.log("Data came from " + source);
 
         setDb(dbDataArray);
         return dbDataArray;

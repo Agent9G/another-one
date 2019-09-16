@@ -17,7 +17,7 @@ class Firebase {
     //initialize firebase
     firebase.initializeApp(firebaseConfig);
     //initialize db
-    this.db = firebase.firestore().enablePersistence();
+    this.db = firebase.firestore();
 
     this.perf = firebase.performance();
   }
