@@ -32,7 +32,8 @@ class Sharebtns extends React.Component {
       this.title = 'Another-One';
       this.media = poster;
       this.state = {
-        hasError: false
+        hasError: false,
+        collapsed: true
       };
     }
 
@@ -54,29 +55,23 @@ class Sharebtns extends React.Component {
       //timers, canceling network requests, or cleaning up any subscriptions.
     }
 
-    collapseSocialShareButtons () {
-
-      const socialShareButtonsCont = document.getElementById('socialShareButtonsContainer');
-
-      if (socialShareButtonsCont.style.visibility === "collapse") {
-        socialShareButtonsCont.style.visibility = "visible";
-      }else {
-        socialShareButtonsCont.style.visibility = "collapse"
-        socialShareButtonsCont.style.flexDirection = "column";
-      }
-
-
-    }
-
     render () {
+      const {collapsed} = this.state;
+      const visibility = collapsed ? 'hidden' : 'visible';
       return (
       <div className="shareContainer">
 
-        <div className="shareBtnCont">
-          <Svg onClickFunction={this.collapseSocialShareButtons} />
+        <div className="shareBtnCont" onClick={() => this.setState({ collapsed: !collapsed })}>
+          <Svg />
         </div>
 
-        <div className="socialShareButtonsContainer" id="socialShareButtonsContainer" >
+        <div
+          className="socialShareButtonsContainer"
+          id="socialShareButtonsContainer"
+          style={{
+            visibility
+          }}
+        >
           <div className="">
             <FacebookShareButton
               url={this.shareUrl}
@@ -175,14 +170,8 @@ class Sharebtns extends React.Component {
           </div>
         </div>
       </div>
-  );
+    );
+  }
 }
-}
-
-
-
-
-
-
 
 export default Sharebtns;
