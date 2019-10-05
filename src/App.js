@@ -2,12 +2,11 @@ import React from "react";
 import Navbar from "./Navbar";
 import AnotherOneVid from "./AnotherOneVid";
 import BlessUp from "./BlessUp";
-import Mute from "./Mute";
+import Mute from "./Mute_Btn";
 import Prophecy from "./Prophecy";
 import Sharebtns from "./Share"
 import Agent9G from "./Agent9G"
 import Firebase from "./Firebase";
-import TagManager from "react-gtm-module";
 import "./App.css";
 
 
@@ -36,12 +35,6 @@ const App = () => {
       });
   },[db]);
 
-  React.useEffect(() => {
-    const tagManagerArgs = {
-      id: 'GTM-WF2VSW8'
-    }
-    TagManager.initialize(tagManagerArgs);
-  }, [])
 
   const randomIndex = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -86,9 +79,9 @@ const App = () => {
 
     if (video.muted === false) {
         setMute("Mute");
-      video.muted = true;
-      centerbtn1.style.color= "white";
-      centerbtn1.style.backgroundColor= "black";
+        video.muted = true;
+        centerbtn1.style.color = "white";
+        centerbtn1.style.backgroundColor = "black";
     } else {
         setMute("Unmute");
       video.muted = false;

@@ -10,10 +10,6 @@ import {
   PinterestShareButton,
   RedditShareButton,
   EmailShareButton,
-  //share count
-  FacebookShareCount,
-  PinterestShareCount,
-  RedditShareCount,
   //icon
   FacebookIcon,
   TwitterIcon,
@@ -81,11 +77,6 @@ class Sharebtns extends React.Component {
               size={32}
               round />
             </FacebookShareButton>
-            <FacebookShareCount
-              url={this.shareUrl}
-              className="SocialMediaShareCount">
-              {count => count}
-            </FacebookShareCount>
           </div>
 
           <div className="">
@@ -130,12 +121,6 @@ class Sharebtns extends React.Component {
               className="">
               <PinterestIcon size={32} round />
             </PinterestShareButton>
-
-            <PinterestShareCount
-              url={this.shareUrl}
-              className="SocialMediaShareCount">
-              {count => count}
-            </PinterestShareCount>
           </div>
 
           <div className="">
@@ -149,12 +134,6 @@ class Sharebtns extends React.Component {
               size={32}
               round />
             </RedditShareButton>
-
-            <RedditShareCount
-              url={this.shareUrl}
-              className="SocialMediaShareCount">
-              {count => count}
-            </RedditShareCount>
           </div>
 
           <div className="">
